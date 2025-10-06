@@ -1,4 +1,4 @@
-"# Weighout OCR - 7-Segment Display Reader
+# Weighout OCR - 7-Segment Display Reader
 
 A real-time OCR web application for reading 7-segment displays using TensorFlow Lite. Built for SIH2025 (Smart India Hackathon 2025).
 
