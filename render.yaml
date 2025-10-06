@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: weighout-ocr
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --config gunicorn.conf.py app_production:app
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
