@@ -153,83 +153,35 @@ Weightout-OCR/
 - **Image quality**: JPEG 80% compression for faster processing
 - **Resolution**: 1280x720 camera input (mobile optimized)
 
-## 🔧 Troubleshooting
-
-### Common Issues
-
-#### Camera Not Working
-```bash
-# Check camera permissions in browser
-# Try different browser (Chrome recommended)
-# Ensure no other apps are using camera
-```
-
-#### RuntimeError: TensorFlow Lite
-```bash
-# Already fixed in current version
-# Each request uses fresh interpreter instance
-```
-
-#### Slow Performance
-```bash
-# Reduce OCR frequency in webcam.js (increase interval)
-# Use better lighting for faster processing
-# Close other browser tabs/apps
-```
-
-#### Mobile Camera Issues
-```bash
-# Grant camera permissions
-# Use HTTPS for camera access (some browsers require it)
-# Try different mobile browsers
-```
-
 ### Performance Optimization
 - **Good lighting** improves accuracy and speed
 - **Stable camera** reduces processing time
 - **Close distance** (10-30cm) works best
 - **Clean displays** give better results
 
-## 🚀 Deployment
 
-### Local Network
-```bash
-python app.py --host=0.0.0.0 --port=5000
-```
 
-### Cloud Deployment
-The app can be deployed to:
-- **Heroku**: `git push heroku main`
-- **Railway**: Connect GitHub repository
-- **Render**: Deploy from GitHub
-- **PythonAnywhere**: Upload files and configure
 
-### Docker (Optional)
-```dockerfile
-FROM python:3.9-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 5000
-CMD ["python", "app.py"]
-```
+## 🙏 Credits & Acknowledgments
 
-## 🤝 Contributing
+### Model Attribution
+- **TensorFlow Lite Model**: `model_float16.tflite`
+- **Model Type**: 7-Segment Display OCR Recognition
+- **Format**: Float16 optimized for mobile/edge deployment
+- **Training**: Custom trained model for digit and character recognition
+- **Optimization**: Quantized to float16 for improved performance
 
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
+### Technologies Used
+- **TensorFlow Lite** - Model inference engine
+- **Flask** - Web framework
+- **OpenCV** - Image processing
+- **PIL (Pillow)** - Image manipulation
+- **NumPy** - Numerical computations
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🏆 SIH2025
-
-This project was developed for Smart India Hackathon 2025, focusing on innovative OCR solutions for industrial and consumer applications.
+### Special Thanks
+- TensorFlow team for TensorFlow Lite framework
+- OpenCV community for computer vision tools
+- Flask development team for the web framework
 
 ## 📞 Support
 
@@ -246,5 +198,3 @@ For issues and questions:
 - **v1.3.0** - Improved CTC decoding and dot filtering
 
 ---
-
-**Made with ❤️ for SIH2025**" 
