@@ -1,0 +1,11 @@
+numpy
+pillow
+opencv-python==4.11.0.86
+tensorflow==2.19.0
+sounddevice==0.5.1
+jax==0.5.0
+jaxlib==0.5.0
+mediapipe==0.10.21
+matplotlib
+flask
+

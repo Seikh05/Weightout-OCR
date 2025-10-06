@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Weighout OCR Demo (SIH2025)</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/webcam.js') }}"></script>
+  </head>
+  <body>
+    <h2>Weighout OCR App (SIH2025)</h2>
+
+    <div id="controls">
+      <button id="startCamBtn">Start Camera</button>
+      <button id="stopCamBtn" style="display: none">Stop Camera</button>
+      <button id="switchCamBtn" style="display: none">Switch Camera</button>
+      <input
+        type="file"
+        id="uploadImage"
+        accept="image/*"
+        capture="environment"
+      />
+    </div>
+
+    <video id="video" autoplay style="display: none"></video>
+    <canvas id="canvas" style="display: none"></canvas>
+    <div id="result">Detected Text: -</div>
+
+    <script>
+      const startCamBtn = document.getElementById("startCamBtn");
+      const stopCamBtn = document.getElementById("stopCamBtn");
+      const switchCamBtn = document.getElementById("switchCamBtn");
+      const uploadImage = document.getElementById("uploadImage");
+
+      startCamBtn.addEventListener("click", () => {
+        startWebcam(); // starts live inference
+      });
+
+      stopCamBtn.addEventListener("click", () => {
+        stopWebcam(); // stops camera
+      });
+
+      switchCamBtn.addEventListener("click", () => {
+        switchCamera(); // switches between front/rear camera
+      });
+
+      uploadImage.addEventListener("change", () => {
+        if (uploadImage.files.length > 0) {
+          runImageOCR(uploadImage.files[0]);
+        }
+      });
+    </script>
+  </body>
+</html>
