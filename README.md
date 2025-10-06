@@ -21,7 +21,7 @@ A real-time OCR web application for reading 7-segment displays using TensorFlow 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/Weightout-OCR.git
+git clone [https://github.com/yourusername/Weightout-OCR.git](https://github.com/Seikh05/Weightout-OCR)
 cd Weightout-OCR
 ```
 
